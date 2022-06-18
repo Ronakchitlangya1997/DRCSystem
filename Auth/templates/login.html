@@ -12,10 +12,13 @@
                 <label>Password : </label>
                 <input type="password" id="passwordid" name="password">
                 <br><br>
-                <button type="submit">Login</button>
+                <button type="submit" {% if numberofattempts > 3 %} disabled="true" {% endif %}>Login</button>
             </form>
             {% if loginErrorMessage %}
                 <p>Username OR password is incorrect</p>
+            {% endif %}
+            {% if numberofattempts > 3 %}
+                <p>Account is locked for 5 Minutes.</p>
             {% endif %}
         </body>
     </html>
