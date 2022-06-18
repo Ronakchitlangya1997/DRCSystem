@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <title>DRC</title>
+        </head>
+        <body>
+            <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit">Sign up</button>
+            </form>
+            {% if welcomeMessage %}
+                <p>Welcome to DRC System!</p>
+            {% endif %}
+        </body>
+    </html>
