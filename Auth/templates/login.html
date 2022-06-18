@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <title>DRC</title>
+        </head>
+        <body>
+            <form  method="POST" action="">{% csrf_token %}
+                <label>Username : </label>
+                <input type="text" id="usernameid" name="username">
+                <br><br>
+                <label>Password : </label>
+                <input type="password" id="passwordid" name="password">
+                <br><br>
+                <button type="submit">Login</button>
+            </form>
+            {% if loginErrorMessage %}
+                <p>Username OR password is incorrect</p>
+            {% endif %}
+        </body>
+    </html>
